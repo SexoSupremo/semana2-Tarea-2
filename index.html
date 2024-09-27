@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Esteban Brizuela</title>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
+
+:root {
+    /* Tema original*/
+    --bg-color: #ecf0f1;
+    --text-color: #333;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --highlight-color: #e74c3c;
+}
+
+/* Tema cyan */
+.tema-cyan {
+    --bg-color: #e0ffff;
+    --text-color: #006666;
+    --primary-color: #00cccc;
+    --secondary-color: #008080;
+    --highlight-color: #00ffff;
+}
+
+/* Tema rosa */
+.tema-rosa {
+    --bg-color: #fff0f5;
+    --text-color: #8b3a62;
+    --primary-color: #ff69b4;
+    --secondary-color: #db7093;
+    --highlight-color: #ff1493;
+}
+
+/* Tema azul */
+.tema azul {
+    --bg-color: #e6f2ff;
+    --text-color: #00008b;
+    --primary-color: #4169e1;
+    --secondary-color: #1e90ff;
+    --highlight-color: #00bfff;
+}
+
+/* Tema violeta */
+.tema-violeta {
+    --bg-color: #f8e6ff;
+    --text-color: #4b0082;
+    --primary-color: #8a2be2;
+    --secondary-color: #9400d3;
+    --highlight-color: #9370db;
+}
+
+/* Tema gris */
+.tema-gris {
+    --bg-color: #f0f0f0;
+    --text-color: #333333;
+    --primary-color: #808080;
+    --secondary-color: #a9a9a9;
+    --highlight-color: #d3d3d3;
+}
+
+/* Tema rojo con blanco y azul */
+.tema-rojoyblancoazul {
+    --bg-color: #ffffff;
+    --text-color: #000080;
+    --primary-color: #ff0000;
+    --secondary-color: #0000ff;
+    --highlight-color: #ffffff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.perfil {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil_imagen {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.trabajo, .educacion, .proyecto {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.trabajo:hover, .educacion:hover, .proyecto:hover {
+    transform: translateY(-5px);
+}
+
+.trabajo h3, .educacion h3, .proyecto h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.trabajo ul, .educacion ul {
+    padding-left: 20px;
+}
+
+.trabajo li, .educacion li {
+    margin-bottom: 10px;
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.habilidad {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.habilidad:hover {
+    background-color: var(--highlight-color);
+}
+
+.contacto {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contacto a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacto a:hover {
+    color: var(--highlight-color);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--highlight-color);
+}
+
+@media (max-width: 600px) {
+    .perfil {
+        padding: 10px;
+    }
+    header {
+        padding: 20px 0;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .contacto {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#tema-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#tema-menu {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+#tema-menu button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#tema-menu button:hover {
+    background-color: var(--highlight-color);
+}
+    </style>
+</head>
+<body>
+    <div class="perfil">
+        <header>
+            <h1>Esteban Daniel Brizuela Perez</h1>
+            <p>Tester</p>
+        </header>
+
+        <section class="section">
+            <h2>Experiencia Laboral</h2>
+            <div class="trabajo">
+                <h3>Blizzard Entertainment</h3>
+                <p><strong> Voluntario - QA Tester para World of Warcraft</strong> | 06/04/2015 - Presente</p>
+                <ul>
+                    <li>Realizo pruebas exhaustivas de nuevas características, contenido y parches del juego cada expansion (cada 4 o 5 años).</li>
+                    <li>Identifico, documento y reporto bugs y problemas de jugabilidad utilizando sistemas internos de seguimiento.(cada parche nuevo)</li>
+                    <li>Colaboro con equipos de desarrollo para reproducir y solucionar problemas complejos.</li>
+                    <li>Participo en sesiones de juego para evaluar el balance, la diversión y la experiencia general del usuario.(cada 1 año)</li>
+                    <li>Contribuyo a la mejora continua de los procesos de QA y las metodologías de prueba mediante innovaciones tecnologicas de grado informatico o social.</li>
+                </ul>
+    
+        </section>
+
+        <section class="section">
+            <h2>Educación</h2>
+            <div class="educacion">
+                <h3>Cnel. Vicente Mongelos</h3>
+                <p><strong>Secundaria Concluida</strong> | 01/01/2014 - 20/11/2016</p>
+            </div>
+            <div class="educacion">
+                <h3>Cnel. Vicente Mongelos</h3>
+                <p><strong>Bachillerato Cientifico con Enfasis en Ciencias Sociales</strong> | 01/01/2017 - 20/11/2019</p>
+            </div>
+            <div class="educacion">
+                <h3>Universidad Comunera</h3>
+                <p><strong>Analisis de Sistemas Informaticos</strong> | 01/03/2023 - Presente</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Habilidades</h2>
+            <div class="habilidades">
+                <span class="habilidad">Adaptabilidad</span>
+                <span class="habilidad">Liderazgo</span>
+                <span class="habilidad">Innovacion</span>
+                <span class="habilidad">Resolucion de Problemas]</span>
+                <span class="habilidad">Paciencia</span>
+                <span class="habilidad">Analisis General</span>
+                <span class="habilidad">Pensamiento Critico</span>
+                <span class="habilidad">Gestion de Proyectos</span>
+                <span class="habilidad">Lenguajes: Python,Java,JavaScript,C++,Rust,Q#,C,Mtr</span>
+                <span class="habilidad">Desarrollo Web: HTML,CSS</span>
+                <span class="habilidad">Bases de datos: SQL, MongoDB,PostgreSQL</span>
+                <span class="habilidad">Analisis de datos</span>
+                <span class="habilidad">Ciberseguridad (basico)</span>
+                <span class="habilidad">IA y Machine Learning</span>
+                <span class="habilidad">Secretariado</span>
+                <span class="habilidad">Administración Pública</span>
+                <span class="habilidad">Ciencias Policiales</span>
+                <span class="habilidad">Redacción Legal</span>
+                <span class="habilidad">Analisis de impacto regulatorio</span>
+                <span class="habilidad">Relaciones Internacionales</span>
+                <span class="habilidad">Análisis de politicas públicas</span>
+                <span class="habilidad">Investigación Jurídica</span>
+                <span class="habilidad">Derecho Constitucional</span>
+                <span class="habilidad">Detección y reporte de bugs</span>
+                <span class="habilidad">Pruebas de Software</span>
+                
+                
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Proyectos</h2>
+            <div class="proyecto">
+                <h3>Simulador de gastos,presupuesto,etc conectada a una base de datos</h3>
+                <p>El proyecto intenta simular a una empresa tradicional, manejando los datos mas importantes como la del usuario,gastos,presupuesto,impuestos,etc</p>
+                <a href="https://github.com/SexoSupremo/Tarea-1" target="_blank">Ver proyecto</a>
+            </div>
+            <div class="proyecto">
+                <h3>Intento de grafica en 3D de moleculas</h3>
+                <p>El proyecto era un intento de mostrar en un grafico las moleculas en 3D, aun esta en proceso de actualizacion y el codigo actualizado sera subido al repositorio proximamente</p>
+                <a href="https://github.com/SexoSupremo/visualmolecular" target="_blank">Ver proyecto</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Información de Contacto</h2>
+            <div class="contacto">
+                <p>Email: <a href="mailto:kejsoficial@gmail.com">kejsoficial@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://py.linkedin.com/in/esteban-brizuela-575b73227" target="_blank">Mi perfil de LinkedIn</a></p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <a href="https://github.com/SexoSupremo" target="_blank">Mi cuenta de GitHub</a>
+    </footer>
+</body>
+
+<script>
+  const temas = [
+    { name: 'Original', class: '' },
+    { name: 'Cyan', class: 'tema-cyan' },
+    { name: 'Rosa', class: 'tema-rosa' },
+    { name: 'Azul', class: 'tema-azul' },
+    { name: 'Violeta', class: 'tema-violeta' },
+    { name: 'Gris', class: 'tema-gris' },
+    { name: 'Rojo-Blanco-Azul', class: 'tema-rojoyblancoazul' }
+];
+
+
+const temaToggle = document.createElement('button');
+temaToggle.id = 'tema-toggle';
+temaToggle.innerText = 'Cambiar Tema';
+document.body.appendChild(temaToggle);
+
+//  menú de temas
+const temaMenu = document.createElement('div');
+temaMenu.id = 'tema-menu';
+document.body.appendChild(temaMenu);
+
+
+temas.forEach(tema => {
+    const button = document.createElement('button');
+    button.innerText = tema.name;
+    button.onclick = () => settema(tema.class);
+    temaMenu.appendChild(button);
+});
+
+
+function settema(temaClass) {
+    document.body.className = temaClass;
+    temaMenu.style.display = 'none';
+}
+
+
+temaToggle.onclick = () => {
+    temaMenu.style.display = temaMenu.style.display === 'none' ? 'block' : 'none';
+};
+
+
+document.addEventListener('click', (event) => {
+    if (!temaToggle.contains(event.target) && !temaMenu.contains(event.target)) {
+        temaMenu.style.display = 'none';
+    }
+});
+</script>
+</html>
